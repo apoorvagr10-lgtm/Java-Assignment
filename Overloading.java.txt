@@ -1,0 +1,32 @@
+class OverloadingExample {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+class OverridingExample {
+    void show() {
+        System.out.println("Parent method");
+    }
+}
+
+class Child extends OverridingExample {
+    void show() {
+        System.out.println("Child method");
+    }
+
+    public static void main(String[] args) {
+        // Overloading
+        OverloadingExample obj = new OverloadingExample();
+        System.out.println(obj.add(2, 3));
+        System.out.println(obj.add(2, 3, 4));
+
+        // Overriding
+        OverridingExample ref = new Child();
+        ref.show();
+    }
+}
